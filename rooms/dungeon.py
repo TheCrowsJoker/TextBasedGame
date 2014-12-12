@@ -10,7 +10,7 @@ class Dungeon(Room):
 
         self.doors = [
             Door("open door", "Door", "Locked"),
-            Lever("Pull lever", "Cadlestick", "Tunnel")
+            Door("Pull lever", "Cadlestick", "Tunnel")
         ]
 
         self.items = []

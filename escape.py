@@ -1,4 +1,5 @@
 import sys
+from rooms.dungeon import Dungeon
 
 class Escape(object):
 
@@ -8,12 +9,25 @@ class Escape(object):
         self.createRooms()
 
     def createRooms(self):
-        self.room = {}
+        self.rooms = {
+            "Dungeon": Dungeon()
+        }
 
     def start(self):
         print("Welcome to ESCAPE!!!!")
-        print("  Enjoy your stay.")
+        print("Enjoy your stay.")
         print("")
+
+        room = self.rooms["Dungeon"]
+        print(room.name)
+        print(room.description)
+
+        print("Options:")
+        for door in room.doors:
+            print("["+door.button + "]" + door.name)
+
+        print("")
+        buttonPressed = input(">>> ")
         
     def end(self):
         print("Thank you for playing!")

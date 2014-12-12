@@ -1,6 +1,6 @@
 from escape import Escape
 
-class game(object):
+class Game(object):
 
     def run(self):
         self.game = Escape()
@@ -8,5 +8,5 @@ class game(object):
 
 ## Starting point
 if __name__ == "__main__":
-    app - Game()
+    app = Game()
     app.run()

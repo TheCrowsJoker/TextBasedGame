@@ -19,7 +19,7 @@ class Escape(object):
         print("Thank you for playing!")
         playAgain = input("Would you like to play again (y/n)?")
 
-        if playAgain,lower() is "y":
+        if playAgain.lower() is "y":
             self.start()
         else:
             sys.exit()

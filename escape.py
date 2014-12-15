@@ -17,17 +17,7 @@ class Escape(object):
         print("Welcome to ESCAPE!!!!")
         print("Enjoy your stay.")
         print("")
-
-        room = self.rooms["Dungeon"]
-        print(room.name)
-        print(room.description)
-
-        print("Options:")
-        for door in room.doors:
-            print("["+door.button + "]" + door.name)
-
-        print("")
-        buttonPressed = input(">>> ")
+        self.enterRoom("Dungeon")
         
     def end(self):
         print("Thank you for playing!")
@@ -37,3 +27,27 @@ class Escape(object):
             self.start()
         else:
             sys.exit()
+
+    def enterRoom(self, roomName):
+        room = self.rooms[roomName]
+        print(room.name)
+        print(room.description)
+        if room.name == "Outside":
+            self.end()
+        else:
+            self.askWhatToDo(room)
+
+    def askWhatToDo(self, room):    
+        # print out the options
+        print("Options:")
+
+        # list the door options
+        for door in room.doors:
+            print ("[" + door.button + "] " + door.name)
+
+        # ask the user to make a choice
+        print("")
+        buttonPressed = input(">>> ")
+        # try to find a door associated with that button
+        chosenDoor = room.getDoorByButton(buttonPressed)
+        self.enterRoom(chosenDoor.leadsTo)

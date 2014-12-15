@@ -7,7 +7,7 @@ class Escape(object):
 
         print(sys.version)
         self.createRooms()
-
+        self.backpack = Backpack()
     def createRooms(self):
         self.rooms = {
             "Dungeon": Dungeon()
@@ -21,7 +21,8 @@ class Escape(object):
         
     def end(self):
         print("Thank you for playing!")
-        playAgain = input("Would you like to play again (y/n)?")
+        print("Would you like to play again (y/n)?")
+        playAgain = input(">>> ")
 
         if playAgain.lower() is "y":
             self.start()
@@ -44,6 +45,9 @@ class Escape(object):
         # list the door options
         for door in room.doors:
             print ("[" + door.button + "] " + door.name)
+
+        for item in room.item:
+            print("[" + item.button + "]" + item.name)
 
         # ask the user to make a choice
         print("")

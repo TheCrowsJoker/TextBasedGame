@@ -1,4 +1,4 @@
-class Item(object);
+class Item(object):
 
     def __init__(self, button, name):
         self.button = button

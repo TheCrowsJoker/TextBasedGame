@@ -2,6 +2,7 @@ import sys
 from rooms.dungeon import Dungeon
 from rooms.tunnel import Tunnel
 from rooms.entranceway import Entranceway
+from rooms.deadEnd import DeadEnd
 from objects.backpack import Backpack
 
 class Escape(object):
@@ -11,12 +12,11 @@ class Escape(object):
         print(sys.version)
         self.createRooms()
         self.backpack = Backpack()
-        
     def createRooms(self):
         self.rooms = {
             "Dungeon": Dungeon(),
             "Tunnel": Tunnel(),
-            "Entranceway": Entranceway()
+            "Dead end": DeadEnd()
         }
 
     def start(self):
@@ -53,7 +53,7 @@ class Escape(object):
             print ("[" + door.button + "] " + door.name)
 
         for item in room.items:
-            print("[" + item.button + "] " + item.name)
+            print("[" + item.button + "]" + item.name)
 
         # ask the user to make a choice
         print("")

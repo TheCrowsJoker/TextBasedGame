@@ -14,4 +14,6 @@ class Tunnel(Room):
             Door("Go right", "Tunnel", "Dead end")
         ]
 
-        self.items = []
+        self.items = [
+            Item("Take key", "Key")
+        ]

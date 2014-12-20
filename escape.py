@@ -2,6 +2,7 @@ import sys
 from rooms.dungeon import Dungeon
 from rooms.tunnel import Tunnel
 from rooms.entranceway import Entranceway
+from rooms.deadend import DeadEnd
 from objects.backpack import Backpack
 
 class Escape(object):
@@ -16,7 +17,8 @@ class Escape(object):
         self.rooms = {
             "Dungeon": Dungeon(),
             "Tunnel": Tunnel(),
-            "Entranceway": Entranceway()
+            "Entranceway": Entranceway(),
+            "Dead end": DeadEnd()
         }
 
     def start(self):

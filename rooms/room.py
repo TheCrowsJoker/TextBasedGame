@@ -6,6 +6,7 @@ class Room(object):
     def getDoorByButton(self,buttonPressed):
         chosenDoor = None
         for door in self.doors:
+            print(door.button)
             if door.button is buttonPressed:
                 chosenDoor = door
         return chosenDoor

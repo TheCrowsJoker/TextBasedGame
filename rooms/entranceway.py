@@ -10,7 +10,7 @@ class Entranceway(Room):
 
         self.doors = [
             Door("Open door", "Door", "Outside"),
-            Door("Open door", "Door", "Ballroom")
+            Door("Go back", "Door", "Ballroom")
         ]
 
         self.items = []

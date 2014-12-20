@@ -4,6 +4,11 @@ from rooms.tunnel import Tunnel
 from rooms.entranceway import Entranceway
 from rooms.deadEnd import DeadEnd
 from rooms.hallway import Hallway
+from rooms.leftTunnel import LeftTunnel
+from rooms.dragonRoom import  DragonRoom
+from rooms.library import Library
+from rooms.diningRoom import DiningRoom
+from rooms.ballroom import Ballroom
 
 from objects.backpack import Backpack
 
@@ -22,7 +27,12 @@ class Escape(object):
             "Tunnel": Tunnel(),
             "Entranceway": Entranceway(),
             "Dead end": DeadEnd(),
-            "Hallway": Hallway()
+            "Hallway": Hallway(),
+            "Left Tunnel": LeftTunnel(),
+            "Dragon Room": DragonRoom(),
+            "Library": Library(),
+            "Ballroom": Ballroom(),
+            "Dining Room": DiningRoom()
         }
 
     def start(self):
@@ -67,6 +77,7 @@ class Escape(object):
 
     def askWhatToDo(self, room):    
         # print out the options
+        print("")
         print("Options:")
 
         # list the door options
@@ -79,6 +90,7 @@ class Escape(object):
         # ask the user to make a choice
         print("")
         buttonPressed = input(">>> ")
+        print("")
         # try to find a door associated with that button
         chosenDoor = room.getDoorByButton(buttonPressed)
         # find item associated with that button

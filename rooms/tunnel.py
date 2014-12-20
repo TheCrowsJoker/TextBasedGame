@@ -10,7 +10,7 @@ class Tunnel(Room):
         self.description = "You stand in a dark tunnel. It streches far into the darkness on both sides of you."
 
         self.doors = [
-            Door("Go left", "Tunnel", "Left tunnel"),
+            Door("Go left", "Tunnel", "Left Tunnel"),
             Door("Go right", "Tunnel", "Dead end"),
             Door("Go back", "Dungeon", "Dungeon")
         ]

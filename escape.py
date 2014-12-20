@@ -3,7 +3,9 @@ from rooms.dungeon import Dungeon
 from rooms.tunnel import Tunnel
 from rooms.entranceway import Entranceway
 from rooms.deadEnd import DeadEnd
+
 from objects.backpack import Backpack
+
 
 class Escape(object):
 
@@ -12,10 +14,12 @@ class Escape(object):
         print(sys.version)
         self.createRooms()
         self.backpack = Backpack()
+        
     def createRooms(self):
         self.rooms = {
             "Dungeon": Dungeon(),
             "Tunnel": Tunnel(),
+            "Entranceway": Entranceway(),
             "Dead end": DeadEnd()
         }
 
@@ -53,17 +57,22 @@ class Escape(object):
             print ("[" + door.button + "] " + door.name)
 
         for item in room.items:
-            print("[" + item.button + "]" + item.name)
+            print("[" + item.button + "] " + item.name)
 
         # ask the user to make a choice
         print("")
         buttonPressed = input(">>> ")
+        print(buttonPressed)
         # try to find a door associated with that button
         chosenDoor = room.getDoorByButton(buttonPressed)
+        print(chosenDoor)
         chosenItem = room.getItemByButton(buttonPressed)
-        print(door.leadsTo)
-        self.enterRoom(door.leadsTo) #hayley was here, was chosenDoor.leadsTo
-
+        if chosenDoor != None:
+            self.enterRoom(chosenDoor.leadsTo)
+        elif chosenItem != None:
+            self.takeItem(chosenItem, room)
+            self.askWhatToDo(room)
+    
     def takeItem(self, item, room):
         room.removeItem(item)
         self.backpack.items.append(item)

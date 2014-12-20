@@ -3,6 +3,7 @@ from rooms.dungeon import Dungeon
 from rooms.tunnel import Tunnel
 from rooms.entranceway import Entranceway
 from rooms.deadEnd import DeadEnd
+from rooms.hallway import Hallway
 
 from objects.backpack import Backpack
 
@@ -20,7 +21,8 @@ class Escape(object):
             "Dungeon": Dungeon(),
             "Tunnel": Tunnel(),
             "Entranceway": Entranceway(),
-            "Dead end": DeadEnd()
+            "Dead end": DeadEnd(),
+            "hallway": Hallway()
         }
 
     def start(self):
@@ -38,20 +40,6 @@ class Escape(object):
             self.start()
         else:
             sys.exit()
-
-    def openDoor(self, door, room):
-
-        if door.requiredItem == None:   
-            self.enterRoom(door.leadsTo)
-        else:
-            item = self.backpack.getItem(door.requiredItem)
-
-            if item != None:
-                print("Used " + item.name)
-                self.enterRoom(door.leadsTo)
-            else:
-                print("It looks like you need a " + door.requiredItem)
-                self.askWhatToDo(room)
 
     def enterRoom(self, roomName):
         room = self.rooms[roomName]
@@ -76,12 +64,13 @@ class Escape(object):
         # ask the user to make a choice
         print("")
         buttonPressed = input(">>> ")
+        print(buttonPressed)
         # try to find a door associated with that button
         chosenDoor = room.getDoorByButton(buttonPressed)
-        #find item associated with that button
+        print(chosenDoor)
         chosenItem = room.getItemByButton(buttonPressed)
         if chosenDoor != None:
-            self.openDoor(chosenDoor, room)
+            self.enterRoom(chosenDoor.leadsTo)
         elif chosenItem != None:
             self.takeItem(chosenItem, room)
             self.askWhatToDo(room)

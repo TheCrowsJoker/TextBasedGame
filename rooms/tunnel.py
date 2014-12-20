@@ -1,5 +1,6 @@
 from rooms.room import Room
 from objects.door import Door
+from objects.item import Item
 
 class Tunnel(Room):
 

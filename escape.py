@@ -39,6 +39,20 @@ class Escape(object):
         else:
             sys.exit()
 
+    def openDoor(self, door, room):
+
+        if door.requiredItem == None:   
+            self.enterRoom(door.leadsTo)
+        else:
+            item = self.backpack.getItem(door.requiredItem)
+
+            if item != None:
+                print("Used " + item.name)
+                self.enterRoom(door.leadsTo)
+            else:
+                print("It looks like you need a " + door.requiredItem)
+                self.askWhatToDo(room)
+
     def enterRoom(self, roomName):
         room = self.rooms[roomName]
         print(room.name)
@@ -62,13 +76,12 @@ class Escape(object):
         # ask the user to make a choice
         print("")
         buttonPressed = input(">>> ")
-        print(buttonPressed)
         # try to find a door associated with that button
         chosenDoor = room.getDoorByButton(buttonPressed)
-        print(chosenDoor)
+        #find item associated with that button
         chosenItem = room.getItemByButton(buttonPressed)
         if chosenDoor != None:
-            self.enterRoom(chosenDoor.leadsTo)
+            self.openDoor(chosenDoor, room)
         elif chosenItem != None:
             self.takeItem(chosenItem, room)
             self.askWhatToDo(room)

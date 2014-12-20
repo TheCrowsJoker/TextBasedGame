@@ -11,7 +11,8 @@ class Tunnel(Room):
 
         self.doors = [
             Door("Go left", "Tunnel", "Left tunnel"),
-            Door("Go right", "Tunnel", "Dead end")
+            Door("Go right", "Tunnel", "Dead end"),
+            Door("Go back", "Dungeon", "Dungeon")
         ]
 
         self.items = [

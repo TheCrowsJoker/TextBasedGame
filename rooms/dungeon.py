@@ -9,7 +9,7 @@ class Dungeon(Room):
         self.description = "You stand in a gloomy, dark dungeon. there is only one door out but it is locked. However there is a mysterios leaver hidden behind a candlestick."
 
         self.doors = [
-            Door("Open door", "Door", "Locked", "Key"),
+            Door("Open door", "Door", "Hallway", "Key"),
             Door("Pull lever", "Cadlestick", "Tunnel")
         ]
 

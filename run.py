@@ -1,3 +1,6 @@
+## Made by Liam Sharpe and Hayley van Waas
+## Created December 2014
+
 from escape import Escape
 
 class Game(object):

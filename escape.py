@@ -1,4 +1,6 @@
 import sys
+
+## Rooms
 from rooms.dungeon import Dungeon
 from rooms.tunnel import Tunnel
 from rooms.entranceway import Entranceway
@@ -15,8 +17,8 @@ from rooms.windyHallway import WindyHallway
 from rooms.kitchen import Kitchen
 from rooms.keyRoom import KeyRoom
 
+## Objects
 from objects.backpack import Backpack
-
 
 class Escape(object):
 
@@ -46,8 +48,12 @@ class Escape(object):
         }
 
     def start(self):
+        print("")
+        print("")
         print("Welcome to ESCAPE!!!!")
         print("Enjoy your stay.")
+        print("Type in the commands in the square brackets to play.")
+        print("Type 'Backpack' at any time to view what items you have.")
         print("")
         self.enterRoom("Dungeon")
         

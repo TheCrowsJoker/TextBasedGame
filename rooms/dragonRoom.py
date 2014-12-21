@@ -10,7 +10,7 @@ class DragonRoom(Room):
 
         self.doors = [
             Door("Go back", "Go back out into the tunnel", "Left Tunnel"),
-            Door("Kill dragon", "Kill the dragon and then walk through the door into the next room", "Library")
+            Door("Kill dragon", "Kill the dragon and then walk through the door into the next", "Library")
         ]
 
         self.items = []

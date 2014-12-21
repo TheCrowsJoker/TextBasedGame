@@ -10,10 +10,10 @@ class Library(Room):
         self.description = "You stand in a massive library. The door slams shuts and locks itself behind you. There is a door on the other side of the room. There is a red key hidden behind one of the books."
 
         self.doors = [
-            Door("Open door", "Go through the door on the other side of the room", "Dragon Room"),
+            Door("Open door", "Go through the door on the other side of the room", "Hallway"),
             Door("Go back", "Go back into the dragon room", "Dragon Room", "Blue Key")
         ]
 
         self.items = [
-        	Item("Take key", "Take the Green Key")
+        	Item("Take key", "Green key")
         ]

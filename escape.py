@@ -11,6 +11,9 @@ from rooms.library import Library
 from rooms.diningRoom import DiningRoom
 from rooms.ballroom import Ballroom
 from rooms.outside import Outside
+from rooms.windyHallway import WindyHallway
+from rooms.kitchen import Kitchen
+from rooms.keyRoom import KeyRoom
 
 from objects.backpack import Backpack
 
@@ -36,7 +39,10 @@ class Escape(object):
             "Ballroom": Ballroom(),
             "Dining Room": DiningRoom(),
             "Outside": Outside(),
-            "Pit": Pit()
+            "Pit": Pit(),
+            "Windy Hallway": WindyHallway(),
+            "Kitchen": Kitchen(),
+            "Key Room": KeyRoom()
         }
 
     def start(self):
@@ -93,7 +99,7 @@ class Escape(object):
 
         # ask the user to make a choice
         print("")
-        buttonPressed = input(">>> ")
+        buttonPressed = input(">>> ").lower()
         print("")
         # try to find a door associated with that button
         chosenDoor = room.getDoorByButton(buttonPressed)

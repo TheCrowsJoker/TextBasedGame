@@ -1,5 +1,6 @@
 from rooms.room import Room
 from objects.door import Door
+from objects.item import Item
 
 class Dungeon(Room):
 
@@ -10,7 +11,7 @@ class Dungeon(Room):
 
         self.doors = [
             Door("Open door", "Try to open the door", "Hallway", "Green key"),
-            Door("Pull lever", "Pull on the cadlestick", "Tunnel")
+            Door("Pull lever", "Pull on the candlestick to open a hidden door", "Tunnel")
         ]
 
         self.items = []

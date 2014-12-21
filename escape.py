@@ -56,7 +56,7 @@ class Escape(object):
         print("Would you like to play again (y/n)?")
         playAgain = input(">>> ")
 
-        if playAgain.lower() == "y":
+        if playAgain.startswith("y") == "y":
             self.start()
         else:
             sys.exit()
@@ -99,17 +99,33 @@ class Escape(object):
 
         # ask the user to make a choice
         print("")
-        buttonPressed = input(">>> ").lower()
+        buttonPressed = input(">>> ")
         print("")
-        # try to find a door associated with that button
-        chosenDoor = room.getDoorByButton(buttonPressed)
-        # find item associated with that button
-        chosenItem = room.getItemByButton(buttonPressed)
-        if chosenDoor != None:
-            self.openDoor(chosenDoor, room)
-        elif chosenItem != None:
-            self.takeItem(chosenItem, room)
+        if buttonPressed == "Backpack":
+            if len(self.backpack.items) == 0:
+                print("You currently have no items in your backpack")
+            else:
+                print("Items in your backpack:")
+                for item in self.backpack.items:
+                    print("    " + item.name)
+            print("")
             self.askWhatToDo(room)
+        else:
+            # try to find a door associated with that button
+            chosenDoor = room.getDoorByButton(buttonPressed)
+            # find item associated with that button
+            chosenItem = room.getItemByButton(buttonPressed)
+
+            if chosenDoor == None and chosenItem == None:
+                print("This is not a valid input!")
+                print("Please try again")
+                self.askWhatToDo(room)
+            else:
+                if chosenDoor != None:
+                    self.openDoor(chosenDoor, room)
+                elif chosenItem != None:
+                    self.takeItem(chosenItem, room)
+                    self.askWhatToDo(room)
     
     def takeItem(self, item, room):
         room.removeItem(item)

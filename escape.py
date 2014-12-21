@@ -46,12 +46,8 @@ class Escape(object):
         }
 
     def start(self):
-        print("")
-        print("")
         print("Welcome to ESCAPE!!!!")
         print("Enjoy your stay.")
-        print("Type in the commands in the square brackets to play.")
-        print("Type 'Backpack' at any time to view what items you have.")
         print("")
         self.enterRoom("Dungeon")
         
@@ -59,10 +55,13 @@ class Escape(object):
         print("Thank you for playing!")
         print("Would you like to play again (y/n)?")
         playAgain = input(">>> ")
+
         if playAgain.lower() == "y" or playAgain.lower() == "yes":
             self.start()
-        else:
+        elif playAgain.lower() == "n" or playAgain.lower() == "no":
             sys.exit()
+        else:
+            self.end()
 
 
     def openDoor(self, door, room):

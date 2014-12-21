@@ -10,7 +10,7 @@ class Kitchen(Room):
 
         self.doors = [
             Door("Go back", "Go back out into the windy hallway", "Windy Hallway"),
-            Door("Kill vampire", "Kill the vampire and then walk through the door into the next", "Key Room")
+            Door("Kill vampire", "Kill the vampire and then walk through the door into the next room", "Key Room")
         ]
 
         self.items = []

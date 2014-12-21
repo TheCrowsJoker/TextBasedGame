@@ -9,7 +9,7 @@ class DeadEnd(Room):
         self.description = "You walk right into a dead end. There is no way forward. You must turn around and go back from whence you came."
 
         self.doors = [
-            Door("Go back", "Dead end", "Tunnel")
+            Door("Go back", "Go back to the tunnel entrance", "Tunnel")
         ]
 
         self.items = []

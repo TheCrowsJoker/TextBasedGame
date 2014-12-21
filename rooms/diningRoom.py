@@ -6,11 +6,11 @@ class DiningRoom(Room):
     def __init__(self):
 
         self.name = "Dining Room"
-        self.description = "You stand in the sining room. there is a door behind you and a door on the other side but a gigantic BASILISK stands in your way."
+        self.description = "You stand in the dining room. There is a door behind you and a door on the other side but a gigantic BASILISK stands in your way."
 
         self.doors = [
-            Door("Go back", "Door", "Hallway"),
-            Door("Kill basilisk", "Door", "Ballroom")
+            Door("Go back", "Go back into the hallway", "Hallway"),
+            Door("Kill basilisk", "Kill the basilisk and move onto the next room", "Ballroom")
         ]
 
         self.items = []

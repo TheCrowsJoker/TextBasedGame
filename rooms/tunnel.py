@@ -1,6 +1,5 @@
 from rooms.room import Room
 from objects.door import Door
-from objects.item import Item
 
 class Tunnel(Room):
 
@@ -10,11 +9,9 @@ class Tunnel(Room):
         self.description = "You stand in a dark tunnel. It streches far into the darkness on both sides of you."
 
         self.doors = [
-            Door("Go left", "Tunnel", "Left Tunnel"),
-            Door("Go right", "Tunnel", "Dead end"),
-            Door("Go back", "Dungeon", "Dungeon")
+            Door("Go left", "Go left down the tunnel", "Left Tunnel"),
+            Door("Go right", "Go right down the tunnel", "Dead end"),
+            Door("Go back", "Go back into the dungeon", "Dungeon")
         ]
 
-        self.items = [
-            Item("Take key", "Key")
-        ]
+        self.items = []

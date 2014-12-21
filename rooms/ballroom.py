@@ -9,8 +9,8 @@ class Ballroom(Room):
         self.description = "You stand in the ballroom. There is an exit on the other side but the DEVIL himself stands in your way."
 
         self.doors = [
-            Door("Go back", "Door", "Dining Room"),
-            Door("Kill devil", "Devil", "Entranceway")
+            Door("Go back", "Go back into the dining room", "Dining Room"),
+            Door("Kill devil", "Kill the devil and go into the next room", "Entranceway", "Red key")
         ]
 
         self.items = []

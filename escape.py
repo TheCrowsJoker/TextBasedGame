@@ -5,6 +5,7 @@ from rooms.entranceway import Entranceway
 from rooms.deadEnd import DeadEnd
 from rooms.hallway import Hallway
 from rooms.leftTunnel import LeftTunnel
+from rooms.pit import Pit
 from rooms.dragonRoom import  DragonRoom
 from rooms.library import Library
 from rooms.diningRoom import DiningRoom
@@ -34,7 +35,8 @@ class Escape(object):
             "Library": Library(),
             "Ballroom": Ballroom(),
             "Dining Room": DiningRoom(),
-            "Outside": Outside()
+            "Outside": Outside(),
+            "Pit": Pit()
         }
 
     def start(self):
@@ -72,7 +74,7 @@ class Escape(object):
         room = self.rooms[roomName]
         print(room.name)
         print(room.description)
-        if room.name == "Outside":
+        if room.name == "Outside" or room.name == "Pit":
             self.end()
         else:
             self.askWhatToDo(room)

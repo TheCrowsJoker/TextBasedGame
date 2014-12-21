@@ -48,7 +48,7 @@ class Escape(object):
         print("Would you like to play again (y/n)?")
         playAgain = input(">>> ")
 
-        if playAgain.lower() is "y":
+        if playAgain.lower() == "y":
             self.start()
         else:
             sys.exit()

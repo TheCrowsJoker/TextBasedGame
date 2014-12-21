@@ -56,10 +56,12 @@ class Escape(object):
         print("Would you like to play again (y/n)?")
         playAgain = input(">>> ")
 
-        if playAgain.startswith("y") == "y":
+        if playAgain.lower() == "y" or playAgain.lower() == "yes":
             self.start()
-        else:
+        elif playAgain.lower() == "n" or playAgain.lower() == "no":
             sys.exit()
+        else:
+            self.end()
 
 
     def openDoor(self, door, room):

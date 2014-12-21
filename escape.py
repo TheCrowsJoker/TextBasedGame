@@ -9,6 +9,7 @@ from rooms.dragonRoom import  DragonRoom
 from rooms.library import Library
 from rooms.diningRoom import DiningRoom
 from rooms.ballroom import Ballroom
+from rooms.outside import Outside
 
 from objects.backpack import Backpack
 
@@ -32,7 +33,8 @@ class Escape(object):
             "Dragon Room": DragonRoom(),
             "Library": Library(),
             "Ballroom": Ballroom(),
-            "Dining Room": DiningRoom()
+            "Dining Room": DiningRoom(),
+            "Outside": Outside()
         }
 
     def start(self):

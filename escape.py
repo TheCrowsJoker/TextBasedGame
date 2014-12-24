@@ -25,7 +25,7 @@ class Escape(object):
 
     def __init__(self):
 
-        print(sys.version)
+        #print(sys.version)
         self.createRooms()
         self.backpack = Backpack()
         self.map = Map()

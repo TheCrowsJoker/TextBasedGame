@@ -14,4 +14,6 @@ class Dungeon(Room):
             Door("Pull lever", "Pull on the candlestick to open a hidden door", "Tunnel")
         ]
 
-        self.items = []
+        self.items = [
+        	Item("Take bone", "Bone")
+        ]

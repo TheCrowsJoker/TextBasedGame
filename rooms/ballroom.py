@@ -7,13 +7,14 @@ class Ballroom(Room):
     def __init__(self):
 
         self.name = "Ballroom"
-        self.description = "You stand in the ballroom. There is an exit on the other side but the DEVIL himself stands in your way."
+        self.description = "You stand in the ballroom. There is an exit on the other side. A crucifix lies on the ground at your feet and a blue key sits on a nearby table."
 
         self.doors = [
             Door("Go back", "Go back into the dining room", "Dining Room"),
-            Door("Kill devil", "Kill the devil and go into the next room", "Entranceway", "Red key")
+            Door("Go forwards", "Move on into the next room", "Entranceway", "Red key")
         ]
 
         self.items = [
-        	Item("Take key", "Blue Key")
+        	Item("Take key", "Blue Key"),
+            Item("Take crucifix","Crucifix")
         ]

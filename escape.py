@@ -19,6 +19,7 @@ from rooms.keyRoom import KeyRoom
 
 ## Objects
 from objects.backpack import Backpack
+from objects.map import Map
 
 class Escape(object):
 
@@ -27,6 +28,7 @@ class Escape(object):
         print(sys.version)
         self.createRooms()
         self.backpack = Backpack()
+        self.map = Map()
         
     def createRooms(self):
         self.rooms = {
@@ -109,7 +111,7 @@ class Escape(object):
         print("")
         buttonPressed = input(">>> ")
         print("")
-        if buttonPressed == "Backpack":
+        if buttonPressed.lower() == "backpack":
             if len(self.backpack.items) == 0:
                 print("You currently have no items in your backpack")
             else:
@@ -117,6 +119,9 @@ class Escape(object):
                 for item in self.backpack.items:
                     print("    " + item.name)
             print("")
+            self.askWhatToDo(room)
+        if buttonPressed.lower() == "map":
+            Map.displayMap(self)
             self.askWhatToDo(room)
         else:
             # try to find a door associated with that button

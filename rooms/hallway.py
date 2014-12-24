@@ -7,7 +7,7 @@ class Hallway(Room):
     def __init__(self):
 
         self.name = "Hallway"
-        self.description = "You stand in a hallway that streches both left and right.There is a door at each end and one more door half way down that leads into the dungeon."
+        self.description = "You stand in a hallway that streches both left and right.There is a door at each end and one more door half way down that leads into the dungeon. There is a sword hanging on one of the walls."
 
         self.doors = [
             Door("Enter dungeon", "Go into the dungeon", "Dungeon", "Green key"),
@@ -15,4 +15,6 @@ class Hallway(Room):
             Door("Enter next room", "Go forwards into the next room", "Dining Room")
         ]
 
-        self.items = []
+        self.items = [
+        	Item("Take sword", "Sword")
+        ]

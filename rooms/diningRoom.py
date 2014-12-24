@@ -10,7 +10,7 @@ class DiningRoom(Room):
 
         self.doors = [
             Door("Go back", "Go back into the hallway", "Hallway"),
-            Door("Kill basilisk", "Kill the basilisk and move onto the next room", "Ballroom"),
+            Door("Kill basilisk", "Kill the basilisk and move onto the next room", "Ballroom", "Sword"),
             Door("Go left", "Go into the room on your left", "Windy Hallway")
         ]
 

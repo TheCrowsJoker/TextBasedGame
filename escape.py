@@ -24,8 +24,6 @@ from objects.map import Map
 class Escape(object):
 
     def __init__(self):
-
-        #print(sys.version)
         self.createRooms()
         self.backpack = Backpack()
         self.map = Map()

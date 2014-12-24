@@ -121,7 +121,11 @@ class Escape(object):
             print("")
             self.askWhatToDo(room)
         if buttonPressed.lower() == "map":
-            Map.displayMap(self)
+            for item in self.backpack.items:
+                if item.name == "Map":
+                    Map.displayMap(self)
+            else:
+                print("You do not currently have a map.")
             self.askWhatToDo(room)
         else:
             # try to find a door associated with that button

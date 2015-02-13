@@ -122,8 +122,8 @@ class Escape(object):
             for item in self.backpack.items:
                 if item.name == "Map":
                     Map.displayMap(self)
-            else:
-                print("You do not currently have a map.")
+                else:
+                    print("You do not currently have a map.")
             self.askWhatToDo(room)
         else:
             # try to find a door associated with that button
@@ -146,3 +146,6 @@ class Escape(object):
         room.removeItem(item)
         self.backpack.items.append(item)
         print("Added " + item.name + " to backpack.")
+        if item.name == "Black key":
+            print("The key is covered with poison which kills you instantly.")
+            self.end()

@@ -1,5 +1,6 @@
 from rooms.room import Room
 from objects.door import Door
+from objects.item import Item
 
 class Kitchen(Room):
 
@@ -13,4 +14,6 @@ class Kitchen(Room):
             Door("Hit troll with axe", "Kill the Troll and then walk through the door into the next room", "Key Room", "Axe")
         ]
 
-        self.items = []
+        self.items = [
+       		Item("Take key", "Black key")
+       	]

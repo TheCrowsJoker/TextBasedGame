@@ -6,7 +6,7 @@ class Tunnel(Room):
     def __init__(self):
 
         self.name = "Tunnel"
-        self.description = "You stand in a dark tunnel. It streches far into the darkness on both sides of you."
+        self.description = "You stand in a dark tunnel. It stretches far into the darkness on both sides of you."
 
         self.doors = [
             Door("Go left", "Go left down the tunnel", "Left Tunnel"),
